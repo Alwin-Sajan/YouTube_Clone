@@ -1,4 +1,3 @@
-import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
@@ -26,7 +25,7 @@ const SideMenu = () => {
         'flex gap-4 items-center hover:bg-gray-100 dark:hover:bg-white/10 p-1 rounded-2xl cursor-pointer';
 
     return (
-        <div className='w-[15%] h-full block max-md:hidden'>
+        <div className='w-[15%] h-full block max-md:hidden overflow-y-scrollr'>
             <ul className='px-8 w-60 py-2 font-medium grid items-start gap-2 text-sm text-gray-800 dark:text-white'>
                 <li className={liClass}>
                     <IconButton aria-label="Home">

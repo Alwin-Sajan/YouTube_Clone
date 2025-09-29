@@ -90,7 +90,8 @@ const SugestVideo: React.FC = () => {
                 {videos.length > 0 ? (
                     videos.map((video) => (
                         <div key={video.id.videoId} className="bg-white dark:bg-transparent rounded-lg shadow-lg overflow-hidden">
-                            <a href={`https://www.youtube.com/watch?v=${video.id.videoId}`} target="_blank" rel="noopener noreferrer">
+                            <a href={`/watch/${video.id.videoId}/${video.snippet.title}`} target="" rel="noopener noreferrer">
+                            {/* <a href={`https://www.youtube.com/watch?v=${video.id.videoId}`} target="#" rel="noopener noreferrer"> */}
                                 <img
                                     src={video.snippet.thumbnails.high.url}
                                     alt={video.snippet.title}

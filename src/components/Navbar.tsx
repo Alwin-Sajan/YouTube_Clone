@@ -1,4 +1,3 @@
-import React from 'react'
 import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -21,12 +20,12 @@ const Navbar = () => {
           </IconButton>
           </span>
 
-          <span className='flex items-center h-16'>
+          <a className='flex items-center h-16' href='/'>
             <IconButton aria-label="Youtube icon" className=''>
               <YouTubeIcon className='w-20 h-20 text-red-600' fontSize="large"/>
             </IconButton>
             <h1 className='font-medium text-xl'>YouTube</h1>
-          </span>
+          </a>
         </li>
 
         <li className='flex gap-4'>
