@@ -6,27 +6,38 @@ import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined';
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
+import MovieOutlinedIcon from '@mui/icons-material/MovieOutlined';
+import LiveTvOutlinedIcon from '@mui/icons-material/LiveTvOutlined';
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import SportsBasketballOutlinedIcon from '@mui/icons-material/SportsBasketballOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import CheckroomOutlinedIcon from '@mui/icons-material/CheckroomOutlined';
+import GraphicEqOutlinedIcon from '@mui/icons-material/GraphicEqOutlined';
 
 const SideMenu = () => {
-    const exploreItems = [
-        'Shopping',
-        'Music',
-        'Movies',
-        'Live',
-        'Gaming',
-        'News',
-        'Sports',
-        'Courses',
-        'Fashion & Beauty',
-        'Podcasts',
-    ];
+    const exploreItems = {
+        'Shopping': ShoppingBagOutlinedIcon,
+        'Music': MusicNoteOutlinedIcon,
+        'Movies': MovieOutlinedIcon,
+        'Live': LiveTvOutlinedIcon,
+        'Gaming': SportsEsportsOutlinedIcon,
+        'News': ArticleOutlinedIcon,
+        'Sports': SportsBasketballOutlinedIcon,
+        'Courses': SchoolOutlinedIcon,
+        'Fashion & Beauty': CheckroomOutlinedIcon,
+        'Podcasts': GraphicEqOutlinedIcon,
+    };
 
     const liClass =
         'flex gap-4 items-center hover:bg-gray-100 dark:hover:bg-white/10 p-1 rounded-2xl cursor-pointer';
 
     return (
-        <div className='w-[15%] h-full block max-md:hidden overflow-y-scrollr'>
-            <ul className='px-8 w-60 py-2 font-medium grid items-start gap-2 text-sm text-gray-800 dark:text-white'>
+        <div className='w-[19%] h-full block max-md:hidden overflow-y-scroll scroll-b'>
+            <ul className='px-8 w-60 py-2 font-medium grid items-start gap-1 text-sm text-gray-800 dark:text-white'>
+                {/* Main */}
                 <li className={liClass}>
                     <IconButton aria-label="Home">
                         <HomeRoundedIcon className='dark:text-white h-8 w-8' />
@@ -59,6 +70,7 @@ const SideMenu = () => {
 
                 <hr className="my-2 border-t border-gray-300 dark:border-white/20" />
 
+                {/* You Section */}
                 <p className="text-xs text-gray-500 dark:text-gray-300 mt-4 mb-1 uppercase">You &gt;</p>
 
                 <li className={liClass}>
@@ -100,12 +112,12 @@ const SideMenu = () => {
 
                 {/* Explore Section */}
                 <p className="text-xs text-gray-500 dark:text-gray-300 mt-4 mb-1 uppercase">Explore</p>
-                {exploreItems.map((item, index) => (
-                    <li
-                        key={index}
-                        className={liClass}
-                    >
-                        {item}
+                {Object.entries(exploreItems).map(([label, Icon], index) => (
+                    <li key={index} className={liClass}>
+                        <IconButton aria-label={label}>
+                            <Icon className='dark:text-white h-8 w-8' />
+                        </IconButton>
+                        <p>{label}</p>
                     </li>
                 ))}
             </ul>
