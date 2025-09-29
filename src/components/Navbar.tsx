@@ -1,64 +1,69 @@
 import React from 'react'
-import MicIcon from '@mui/icons-material/Mic';
+import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 
+
 const Navbar = () => {
   return (
-    <div>
-      <ul className='flex gap-4 py-2 px-8 items-center justify-between w-full'>
+    <div >
+      <ul className='flex gap-4 pt-2 pb-1 px-8  max-md:px-2 items-center justify-between w-full fixed bg-white dark:bg-[#0f0f0f] z-10'>
         <li className='flex items-center'>
-          <IconButton aria-label="Microphone">
-            <MenuIcon />
+          <span  className=' max-md:hidden'>
+            <IconButton aria-label="Microphone">
+            <MenuIcon className='dark:text-white' fontSize="large" />
           </IconButton>
+          </span>
 
           <span className='flex items-center h-16'>
-            <IconButton aria-label="Youtube icon" className='h-16'>
-              <YouTubeIcon className='' />
+            <IconButton aria-label="Youtube icon" className=''>
+              <YouTubeIcon className='w-20 h-20 text-red-600' fontSize="large"/>
             </IconButton>
             <h1 className='font-medium text-xl'>YouTube</h1>
           </span>
         </li>
 
-        <li className='flex'>
-          <span className='flex items-center rounded-2xl border-1'>
+        <li className='flex gap-4'>
+          <span className='flex items-center rounded-3xl dark:bg-white/10 dark:border-white/10 lg:border-1'>
             <input type="text" placeholder='Search'
-              className='rounded-l-2xl w-96 px-4 h-8 bg-amber-300 '
+              className='rounded-l-3xl w-[500px]  h-full  max-md:hidden placeholder:dark:bg-black focus:border-blue-400 placeholder:p-8 '
             />
-            <IconButton aria-label="Search icon" className='h-8'>
-              <SearchIcon className='' />
+            <IconButton aria-label="Search icon" className='h-8 dark:text-white/10'>
+              <SearchIcon className='dark:text-white '/>
             </IconButton>
           </span>
 
-          <IconButton aria-label="Microphone" className='h-8'>
-            <MicIcon />
+          <span className='max-md:hidden'>
+            <IconButton aria-label="Microphone" >
+            <MicNoneOutlinedIcon className='dark:text-white'/>
           </IconButton>
+          </span>
         </li>
 
-        <li className='flex'>
-          <span className='flex items-center rounded-2xl border-1'>
-            <IconButton aria-label="Microphone" className='h-8'>
-              <AddIcon />
+        <li className='flex max-md:hidden gap-4'>
+          <span className='flex items-center rounded-3xl dark:bg-white/10 bg-gray-100 '>
+            <IconButton aria-label="Microphone" className='h-full'>
+              <AddIcon className='dark:text-white'/>
             </IconButton>
-            <button className='pr-4'>Create</button>
+            <button className='pr-4 text-black dark:text-white font-medium'>Create</button>
           </span>
 
 
 
           <IconButton aria-label="Microphone" className='h-8'>
-            <NotificationsIcon />
+            <NotificationsOutlinedIcon className='dark:text-white'/>
           </IconButton>
 
 
 
           <IconButton aria-label="Microphone" className='h-8'>
-            <AccountCircleIcon />
+            <AccountCircleIcon className='dark:text-white'/>
           </IconButton>
         </li>
 
