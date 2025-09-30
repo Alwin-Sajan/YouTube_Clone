@@ -1,12 +1,11 @@
 import {useParams } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 
 const WatchVideo = () => {
   const { id, title } = useParams();
 
     return (
         <div className='dark:bg-[#0f0f0f] dark:text-[#f1f1f1] w-full min-h-screen '>
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div className='lg:flex min-h-screen w-full pt-24'>
                 <div className='lg:h-[80vh] lg:w-[65%]  lg:pl-16 w-full block'>

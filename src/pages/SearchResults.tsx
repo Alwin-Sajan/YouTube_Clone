@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import SideMenu from '../components/SideMenu';
 
 // Interfaces for YouTube API response
 interface Thumbnail {
@@ -40,7 +41,11 @@ interface YouTubeResponse {
   items: VideoItem[];
 }
 
-const SearchResults = () => {
+interface NavbarProps {
+  showMenu: boolean;
+}
+
+const SearchResults: React.FC<NavbarProps> = ({ showMenu }) => {
   const { query } = useParams<{ query: string }>();
   const [results, setResults] = useState<VideoItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -79,28 +84,38 @@ const SearchResults = () => {
 
   return (
     <div className='dark:bg-[#0f0f0f] dark:text-[#f1f1f1] w-full min-h-screen'>
-      <Navbar />
-      <div className='pt-24 px-8'>
+      {/* <Navbar /> */}
+      {/* <div className='pt-24 px-8'> */}
+      <div className='lg:flex lg:pt-16 '>
+
+        {showMenu && <SideMenu />}
         {loading ? (
           <p className="text-center text-lg">Loading...</p>
         ) : (
-          <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+          <div className='pt-8 grid lg:w-[72%] '>
             {results
               .filter((item) => item.id.videoId)
               .map((item) => (
                 <Link
                   to={`/watch/${item.id.videoId}/${encodeURIComponent(item.snippet.title)}`}
                   key={item.id.videoId}
-                  className='dark:bg-white/10 p-4 rounded-md hover:scale-105 transition'
+                  className='hover:dark:bg-white/10 dark:bg-[#0f0f0f] p-4 rounded-md hover:scale-95 transition lg:flex gap-8'
                 >
-                  <img
-                    src={item.snippet.thumbnails.high.url}
-                    alt={item.snippet.title}
-                    className='w-full h-auto rounded-md'
-                  />
-                  <h2 className='mt-2 font-medium'>{item.snippet.title}</h2>
-                  <p className='text-sm text-gray-400'>{item.snippet.channelTitle}</p>
+                  <div className="lg:w-[360px] aspect-video overflow-hidden rounded-md flex-shrink-0">
+                    <img
+                      src={item.snippet.thumbnails.high.url}
+                      alt={item.snippet.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <span className='flex flex-col gap-2 w-full'>
+                    <h2 className='text-xl font-medium'>{item.snippet.title}</h2>
+                    <p className='text-sm text-gray-400'>{item.snippet.channelTitle}</p>
+                    <p className='line-clamp-2 text-sm'>{item.snippet.description}</p>
+                  </span>
                 </Link>
+
               ))}
           </div>
         )}

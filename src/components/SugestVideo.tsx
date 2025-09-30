@@ -66,7 +66,7 @@ const SugestVideo: React.FC = () => {
     }, [selectedCategory]);
 
     return (
-        <div className='lg:w-[82%]  max-md:w-full relative'>
+        <div className='lg:w-[100%]  max-md:w-full relative'>
             <ul className='flex gap-4 items-center overflow-x-scroll py-3 z-20 scroll-b px-4 fixed bg-white dark:bg-[#0f0f0f]'>
                 {category.map((cat, index) => {
                     return (

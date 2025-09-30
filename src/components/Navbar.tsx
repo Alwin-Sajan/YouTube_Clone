@@ -10,7 +10,12 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-const Navbar = () => {
+interface NavbarProps {
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  showMenu: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setShowMenu, showMenu }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const navigate = useNavigate();
 
@@ -34,11 +39,15 @@ const Navbar = () => {
     <div>
       <ul className='flex gap-4 pt-2 pb-1 px-8 max-md:px-2 items-center justify-between w-full fixed bg-white dark:bg-[#0f0f0f] z-10'>
         <li className='flex items-center'>
-          <span className='max-md:hidden'>
+          <button
+            className='max-md:hidden'
+            onClick={() => setShowMenu(!showMenu)}
+          >
             <IconButton aria-label="Menu">
               <MenuIcon className='dark:text-white' fontSize="large" />
             </IconButton>
-          </span>
+          </button>
+
           <a className='flex items-center h-16' href='/'>
             <IconButton aria-label="YouTube">
               <YouTubeIcon className='w-20 h-20 text-red-600' fontSize="large" />
@@ -48,19 +57,23 @@ const Navbar = () => {
         </li>
 
         <li className='flex gap-4'>
-          <span className='flex items-center rounded-3xl dark:bg-white/10 dark:border-white/10 lg:border-1'>
+          <span className='flex items-center rounded-3xl dark:bg-black dark:border-white/10 lg:border-1'>
             <input
               type="text"
               placeholder='Search'
               value={searchQuery}
               onChange={handleChange}
               onKeyDown={handleKeyDown}
-              className='rounded-l-3xl w-[500px] h-full max-md:hidden placeholder:dark:bg-black focus:border-blue-400 placeholder:p-8'
+              className='rounded-l-3xl lg:w-[500px] h-full flex items-center placeholder:dark:bg-black focus:border-blue-400 pl-4'
             />
-            <IconButton aria-label="Search" onClick={handleSearch}>
+            <span className='bg-gray-100  dark:bg-white/10 rounded-r-full'>            
+              <IconButton aria-label="Search" onClick={handleSearch}>
               <SearchIcon className='dark:text-white' />
             </IconButton>
+            </span>
           </span>
+
+
           <span className='max-md:hidden'>
             <IconButton aria-label="Mic">
               <MicNoneOutlinedIcon className='dark:text-white' />
@@ -75,9 +88,11 @@ const Navbar = () => {
             </IconButton>
             <button className='pr-4 text-black dark:text-white font-medium'>Create</button>
           </span>
+
           <IconButton aria-label="Notifications">
             <NotificationsOutlinedIcon className='dark:text-white' />
           </IconButton>
+
           <IconButton aria-label="Account">
             <AccountCircleIcon className='dark:text-white' />
           </IconButton>
