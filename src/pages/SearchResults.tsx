@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../components/Navbar';
 import SideMenu from '../components/SideMenu';
 
 // Interfaces for YouTube API response
@@ -64,7 +63,7 @@ const SearchResults: React.FC<NavbarProps> = ({ showMenu }) => {
           order: 'date'
         },
         headers: {
-          'x-rapidapi-key': 'cb5ccc3575msh422407a11e19946p10b516jsn8aa77db11589',
+          'x-rapidapi-key': 'd887138fefmsh20f10ba5bde8196p1c1ffajsn983f162decef',
           'x-rapidapi-host': 'youtube-v31.p.rapidapi.com'
         }
       };

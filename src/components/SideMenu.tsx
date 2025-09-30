@@ -1,11 +1,11 @@
 import IconButton from '@mui/material/IconButton';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
-import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined';
-import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
-import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+// import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
+// import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined';
+// import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
+// import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
+// import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import MovieOutlinedIcon from '@mui/icons-material/MovieOutlined';
@@ -70,7 +70,7 @@ const SideMenu = () => {
 
                 <hr className="my-2 border-t border-gray-300 dark:border-white/20" />
 
-                {/* You Section */}
+                {/* You Section
                 <p className="text-xs text-gray-500 dark:text-gray-300 mt-4 mb-1 uppercase">You &gt;</p>
 
                 <li className={liClass}>
@@ -108,7 +108,7 @@ const SideMenu = () => {
                     <p>Downloads</p>
                 </li>
 
-                <hr className="my-2 border-t border-gray-300 dark:border-white/20" />
+                <hr className="my-2 border-t border-gray-300 dark:border-white/20" /> */}
 
                 {/* Explore Section */}
                 <p className="text-xs text-gray-500 dark:text-gray-300 mt-4 mb-1 uppercase">Explore</p>
