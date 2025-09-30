@@ -8,9 +8,9 @@ const WatchVideo = () => {
         <div className='dark:bg-[#0f0f0f] dark:text-[#f1f1f1] w-full min-h-screen '>
             <Navbar />
 
-            <div className='flex min-h-screen w-full pt-24'>
-                <div className='h-[80vh] w-[65%]  pl-16 '>
-                    <iframe className='w-[85%] h-[80%]'
+            <div className='lg:flex min-h-screen w-full pt-24'>
+                <div className='lg:h-[80vh] lg:w-[65%]  lg:pl-16 w-full block'>
+                    <iframe className='lg:w-[85%] lg:h-[80%] w-full h-[231px]'
                         src={`https://www.youtube.com/embed/${id}`}>
                     </iframe>
 
